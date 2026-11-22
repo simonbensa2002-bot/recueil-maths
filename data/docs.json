@@ -1,0 +1,1226 @@
+{
+ "docs": [
+  {
+   "id": "ds-suites-exp-limites-asymptotes",
+   "t": "DST n°1",
+   "i": "8 novembre 2025",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "limites",
+    "fonctions",
+    "exp",
+    "suites",
+    "recurrence"
+   ],
+   "lv": 4,
+   "st": 2,
+   "min": 240,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "ds-suites-exp-limites-asymptotes",
+   "cor": "corr-dst1-8-nov-2025",
+   "why": "8 exercices en 4 h, limites et asymptotes peu guidées, deux problèmes de suites (dont un paramétré par a) où il faut trouver la méthode.",
+   "date": "2025-11-08"
+  },
+  {
+   "id": "ds-limites-convexite-suites-15-nov-2025",
+   "t": "DS du 15 novembre",
+   "i": "2025 · Limites, convexité, suites",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "limites",
+    "convexite",
+    "suites",
+    "fonctions",
+    "derivation"
+   ],
+   "lv": 4,
+   "st": 1,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "ds-limites-convexite-suites-15-nov-2025",
+   "cor": "corr-ds-15-nov-2025",
+   "why": "Limites par disjonction de cas, étude complète de fonction, puis un raisonnement par l’absurde sur la dérivée d’une fonction décroissante (style prépa).",
+   "date": "2025-11-15"
+  },
+  {
+   "id": "ds-suites-suites-de-fonctions",
+   "t": "DT du 22 novembre",
+   "i": "2025 · 2 h",
+   "tr": "spe",
+   "k": "dt",
+   "tags": [
+    "suites",
+    "recurrence",
+    "continuite",
+    "fonctions",
+    "limites"
+   ],
+   "lv": 5,
+   "st": 3,
+   "min": 120,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "ds-suites-suites-de-fonctions",
+   "cor": "corr-dt-22-nov-2025",
+   "why": "Suite de Héron, suites de fonctions x^n + x − 1 et équation fonctionnelle f(2x+3) = f(x) : énoncés très peu guidés, type concours.",
+   "date": "2025-11-22"
+  },
+  {
+   "id": "ds-suites-somme-convergence",
+   "t": "Contrôle n°1",
+   "i": "29 septembre · 2 h",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "suites",
+    "recurrence",
+    "limites",
+    "logique"
+   ],
+   "lv": 3,
+   "st": 1,
+   "min": 120,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "ds-suites-somme-convergence",
+   "cor": "corr-controle1-29-sept",
+   "why": "Suites et sommes, démonstration de cours, vrai/faux justifiés et proposition sur les moyennes de Cesàro.",
+   "date": null
+  },
+  {
+   "id": "ds-suites-fonctions-somme",
+   "t": "Devoir n°1 (maison)",
+   "i": "pour le 15 septembre",
+   "tr": "spe",
+   "k": "dm",
+   "tags": [
+    "suites",
+    "recurrence"
+   ],
+   "lv": 3,
+   "st": 1,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "ds-suites-fonctions-somme",
+   "cor": "corr-devoir1-maison",
+   "why": "Vrai/faux avec démonstrations, exercice facultatif plus difficile sur le sens de variation, suites avec récurrence.",
+   "date": null
+  },
+  {
+   "id": "ds-suites-limites-2023",
+   "t": "DS Suites et limites",
+   "i": "9 octobre 2023 · 2 h · Notre-Dame de Boulogne",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "suites",
+    "recurrence",
+    "limites",
+    "logique"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": 120,
+   "calc": true,
+   "src": "Notre-Dame de Boulogne",
+   "pdf": "ds-suites-limites-2023",
+   "cor": "corr-ds-suites-limites-2023",
+   "why": "Exercices classiques et très guidés (suite arithmético-géométrique, récurrence, limites usuelles).",
+   "date": "2023-10-09"
+  },
+  {
+   "id": "ds-suites-limites-position-relative",
+   "t": "DS du 20 décembre 2023",
+   "i": "4 h · exercices 1 et 3",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "fonctions",
+    "exp",
+    "continuite",
+    "suites",
+    "limites"
+   ],
+   "lv": 4,
+   "st": 1,
+   "min": 240,
+   "calc": null,
+   "src": "Notre-Dame de Boulogne",
+   "pdf": "ds-suites-limites-position-relative",
+   "cor": "corr-ds-20-dec-2023",
+   "why": "Étude de fonction exponentielle avec équation g(x) = 0 et position relative de courbes, puis suites couplées (xₙ) et (yₙ) avec limite.",
+   "date": "2023-12-20"
+  },
+  {
+   "id": "bac-blanc-dec-2024",
+   "t": "Bac blanc",
+   "i": "décembre 2024 · 4 h · calculatrice",
+   "tr": "spe",
+   "k": "bb",
+   "tags": [
+    "suites",
+    "exp",
+    "ln",
+    "convexite",
+    "limites",
+    "continuite",
+    "recurrence",
+    "derivation"
+   ],
+   "lv": 3,
+   "st": 2,
+   "min": 240,
+   "calc": true,
+   "src": "M. Hattab",
+   "pdf": "bac-blanc-dec-2024",
+   "cor": "corr-bac-blanc-dec-2024",
+   "why": "Format bac : QCM, suite exponentielle, 2 études de fonction. Bonus avec des extraits de bacs S plus difficiles.",
+   "date": "2024-12-20"
+  },
+  {
+   "id": "bac-blanc-dec-2025",
+   "t": "Bac blanc",
+   "i": "décembre 2025 · 4 h · calculatrice",
+   "tr": "spe",
+   "k": "bb",
+   "tags": [
+    "suites",
+    "recurrence",
+    "ln",
+    "exp",
+    "convexite",
+    "derivation",
+    "limites",
+    "continuite"
+   ],
+   "lv": 4,
+   "st": 2,
+   "min": 240,
+   "calc": true,
+   "src": "M. Hattab",
+   "pdf": "bac-blanc-dec-2025",
+   "cor": "corr-bac-blanc-dec-2025",
+   "why": "Deux exercices de suites peu guidés (conjecture puis preuve), optimisation d’aire avec ln, modélisation avec convexité.",
+   "date": "2025-12-20"
+  },
+  {
+   "id": "ds-suites-fonctions-continuite",
+   "t": "Interrogation n°3",
+   "i": "27 novembre 2025 · 1 h · sans calculatrice",
+   "tr": "spe",
+   "k": "ic",
+   "tags": [
+    "suites",
+    "recurrence",
+    "continuite",
+    "fonctions",
+    "derivation",
+    "limites"
+   ],
+   "lv": 3,
+   "st": 1,
+   "min": 60,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "ds-suites-fonctions-continuite",
+   "cor": "inclus",
+   "why": "Étude de x·e^(x²−1) avec suite et point fixe, fonction rationnelle avec TVI, continuité avec partie entière.",
+   "date": "2025-11-27"
+  },
+  {
+   "id": "ds-suites-exp-geometrie-denombrement-proba",
+   "t": "DST n°2",
+   "i": "29 janvier 2026 · 4 h · calculatrice mode examen",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "suites",
+    "exp",
+    "fonctions",
+    "derivation",
+    "limites",
+    "espace",
+    "denombrement",
+    "proba"
+   ],
+   "lv": 4,
+   "st": 1,
+   "min": 240,
+   "calc": true,
+   "src": "M. Hattab",
+   "pdf": "ds-suites-exp-geometrie-denombrement-proba",
+   "cor": "inclus",
+   "why": "4 exercices sur 4 h couvrant suites, exponentielle, géométrie dans l’espace et probabilités : très large, il faut tout maîtriser.",
+   "date": "2026-01-29"
+  },
+  {
+   "id": "ds-convexite",
+   "t": "Interrogation n°7",
+   "i": "16 février 2026 · 45 min · sans calculatrice",
+   "tr": "spe",
+   "k": "ic",
+   "tags": [
+    "convexite",
+    "derivation",
+    "fonctions"
+   ],
+   "lv": 3,
+   "st": 1,
+   "min": 45,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "ds-convexite",
+   "cor": "inclus",
+   "why": "Courte et rapide : dérivées, centre de symétrie, convexité avec points d’inflexion, tangente et maximum.",
+   "date": "2026-02-16"
+  },
+  {
+   "id": "correction-bac-blanc",
+   "t": "Probabilités : volley-ball",
+   "i": "exercice de bac blanc · correction manuscrite",
+   "tr": "spe",
+   "k": "exo",
+   "tags": [
+    "proba"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "correction-bac-blanc",
+   "cor": "inclus",
+   "why": "Probabilités conditionnelles avec arbre pondéré, événements indépendants. Seule la correction est fournie.",
+   "date": null
+  },
+  {
+   "id": "ds-correction-logique-suites-2025",
+   "t": "Interrogation n°1",
+   "i": "2025 · logique, suites",
+   "tr": "spe",
+   "k": "ic",
+   "tags": [
+    "logique",
+    "suites",
+    "recurrence"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "ds-correction-logique-suites-2025",
+   "cor": "inclus",
+   "why": "Logique (table de vérité, condition nécessaire/suffisante) puis récurrences classiques.",
+   "date": "2025-09-15"
+  },
+  {
+   "id": "exercices-essentiels",
+   "t": "Exercices essentiels",
+   "i": "Claude · niveau 1 · échauffement",
+   "tr": "spe",
+   "k": "exo",
+   "tags": [
+    "limites",
+    "continuite"
+   ],
+   "lv": 1,
+   "st": 0,
+   "min": null,
+   "calc": false,
+   "src": "Claude",
+   "pdf": "exercices-essentiels",
+   "cor": "corr-exercices-essentiels",
+   "why": "Techniques de base des limites et de la continuité avec rédaction du TVI en 4 étapes.",
+   "date": null
+  },
+  {
+   "id": "ds-sur-mesure-a",
+   "t": "DS sur mesure A",
+   "i": "Claude · 2 h · sans calculatrice · niveau contrôle",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "limites",
+    "continuite",
+    "fonctions",
+    "exp"
+   ],
+   "lv": 3,
+   "st": 0,
+   "min": 120,
+   "calc": false,
+   "src": "Claude",
+   "pdf": "ds-sur-mesure-a",
+   "cor": "corr-ds-sur-mesure-a",
+   "why": "Limites variées, asymptote oblique, continuité et TVI : niveau d’un contrôle Hattab.",
+   "date": null
+  },
+  {
+   "id": "ds-sur-mesure-b",
+   "t": "DS sur mesure B",
+   "i": "Claude · 2 h · sans calculatrice · niveau 20/20",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "limites",
+    "continuite",
+    "exp",
+    "fonctions",
+    "suites",
+    "recurrence"
+   ],
+   "lv": 5,
+   "st": 1,
+   "min": 120,
+   "calc": false,
+   "src": "Claude",
+   "pdf": "ds-sur-mesure-b",
+   "cor": "corr-ds-sur-mesure-b",
+   "why": "Limites piégeuses, point fixe avec eˣ − x − 2, vrai/faux avec contre-exemples, exercice étoilé.",
+   "date": null
+  },
+  {
+   "id": "depresle-devoir5-2015",
+   "t": "Devoir n°5",
+   "i": "janvier 2015 · 3 h · Ph. Depresle",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "derivation",
+    "exp",
+    "limites",
+    "cx-alg",
+    "fonctions"
+   ],
+   "lv": 4,
+   "st": 1,
+   "min": 180,
+   "calc": null,
+   "src": "Ph. Depresle",
+   "pdf": "depresle-devoir5-2015",
+   "cor": "corr-depresle-devoir5-2015",
+   "why": "Tangente commune à deux courbes avec exponentielle : démarche longue et peu guidée (ancien programme de Tle S).",
+   "date": "2015-01-12"
+  },
+  {
+   "id": "depresle-devoir1-2017",
+   "t": "Devoir n°1",
+   "i": "septembre 2017 · 2 h · Ph. Depresle",
+   "tr": "spe",
+   "k": "ds",
+   "tags": [
+    "suites",
+    "recurrence"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": 120,
+   "calc": null,
+   "src": "Ph. Depresle",
+   "pdf": "depresle-devoir1-2017",
+   "cor": "corr-depresle-devoir1-2017",
+   "why": "Suites arithmético-géométriques et récurrence : exercices guidés pour s’entraîner.",
+   "date": "2017-09-20"
+  },
+  {
+   "id": "ds-convexite-gamma-hors-programme",
+   "t": "Convexité et fonction Gamma",
+   "i": "hors programme (niveau prépa) · théorème de Bohr-Mollerup",
+   "tr": "spe",
+   "k": "hp",
+   "tags": [
+    "convexite",
+    "ln",
+    "fonctions"
+   ],
+   "lv": 5,
+   "st": 3,
+   "min": null,
+   "calc": null,
+   "src": "Trouvé sur les réseaux",
+   "pdf": "ds-convexite-gamma-hors-programme",
+   "cor": "corr-ds-convexite-gamma",
+   "why": "Hors programme : fonctions logarithmiquement convexes et démonstration d’Artin. Pour la curiosité, pas pour un contrôle.",
+   "date": null
+  },
+  {
+   "id": "dst3-seconde-geometrie",
+   "t": "DST n°3 Seconde",
+   "i": "Rappels de géométrie · 1 h · niveau Seconde",
+   "tr": "spe",
+   "k": "rev",
+   "tags": [
+    "geo-plane"
+   ],
+   "lv": 1,
+   "st": 0,
+   "min": 60,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "dst3-seconde-geometrie",
+   "cor": "corr-dst3-seconde-geometrie",
+   "why": "Révision express : Pythagore, Thalès, droites remarquables, cercle. Niveau Seconde.",
+   "date": null
+  },
+  {
+   "id": "ds1-expertes",
+   "t": "DS 1 Expertes",
+   "i": "Complexes : point de vue algébrique · 1 h 30",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "cx-alg",
+    "binome-poly",
+    "recurrence"
+   ],
+   "lv": 3,
+   "st": 2,
+   "min": 90,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "ds1-expertes",
+   "cor": "corr-ds1-expertes",
+   "why": "Forme algébrique et équations, suite complexe par récurrence, démonstration du binôme (★★★) et méthode de Cardan (★★★★).",
+   "date": null
+  },
+  {
+   "id": "dst2-expertes",
+   "t": "DS 2 Expertes",
+   "i": "Binôme de Newton, équations du 3e degré · 45 min",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "binome-poly",
+    "recurrence"
+   ],
+   "lv": 2,
+   "st": 1,
+   "min": 45,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "dst2-expertes",
+   "cor": "corr-dst2-expertes",
+   "why": "Court et guidé : équation du 3e degré avec racine évidente, binôme appliqué, récurrence sur une somme de coefficients binomiaux.",
+   "date": null
+  },
+  {
+   "id": "dst3-expertes-final",
+   "t": "DS 3 Expertes",
+   "i": "Module, argument, forme trigonométrique · 1 h 30",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "cx-trigo",
+    "cx-alg",
+    "suites"
+   ],
+   "lv": 4,
+   "st": 2,
+   "min": 90,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "dst3-expertes-final",
+   "cor": "corr-dst3-expertes",
+   "why": "Inégalité triangulaire à démontrer, ensembles de points, formes trigonométriques, valeurs exactes de cos(π/12), exercice ★★★★★.",
+   "date": null
+  },
+  {
+   "id": "dst3-rattrapage",
+   "t": "DS 3 Expertes, rattrapage",
+   "i": "Module, argument, forme trigonométrique · 1 h 15",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "cx-trigo",
+    "cx-alg"
+   ],
+   "lv": 3,
+   "st": 2,
+   "min": 75,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "dst3-rattrapage",
+   "cor": "corr-dst3-rattrapage",
+   "why": "Même thème que le DS 3 en plus court : modules, formes trigonométriques, linéarisation de cos 3θ, ensemble de points ★★★★.",
+   "date": null
+  },
+  {
+   "id": "dst4-finale-expertes",
+   "t": "DS 4 Expertes",
+   "i": "Complexes : point de vue géométrique · 1 h 30",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "cx-geo",
+    "cx-trigo",
+    "suites"
+   ],
+   "lv": 4,
+   "st": 3,
+   "min": 90,
+   "calc": false,
+   "src": "M. Hattab",
+   "pdf": "dst4-finale-expertes",
+   "cor": "corr-dst4-expertes",
+   "why": "Forme exponentielle, racines de l’unité, transformation de sommes en produits, disque unité, suite de points avec triangles rectangles.",
+   "date": null
+  },
+  {
+   "id": "controle-arithmetique-2021",
+   "t": "Contrôle Arithmétique",
+   "i": "20 janvier 2021 · Paul Milan",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "arith"
+   ],
+   "lv": 3,
+   "st": 1,
+   "min": null,
+   "calc": null,
+   "src": "Paul Milan",
+   "pdf": "controle-arithmetique-2021",
+   "cor": "corr-controle-arithmetique-2021",
+   "why": "Diviseurs, division euclidienne, congruences, critère de divisibilité par 17 et équation de Pell-Fermat.",
+   "date": "2021-01-21"
+  },
+  {
+   "id": "controle-arithmetique-2026",
+   "t": "Contrôle Arithmétique",
+   "i": "22 janvier 2026 · Paul Milan",
+   "tr": "exp",
+   "k": "ds",
+   "tags": [
+    "arith"
+   ],
+   "lv": 3,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "Paul Milan",
+   "pdf": "controle-arithmetique-2026",
+   "cor": "corr-controle-arithmetique-2026",
+   "why": "QCM puis exercices classiques sur multiples, division euclidienne, congruences et critère de divisibilité par 19.",
+   "date": "2026-01-22"
+  },
+  {
+   "id": "td1-spe-suites",
+   "t": "TD 1 Spé",
+   "i": "Chapitre 1 · Suites",
+   "tr": "spe",
+   "k": "td",
+   "tags": [
+    "suites"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "td1-spe-suites",
+   "cor": "inclus",
+   "why": "TD d’entraînement du chapitre, corrigé inclus.",
+   "date": null
+  },
+  {
+   "id": "td2-spe-recurrence",
+   "t": "TD 2 Spé",
+   "i": "Chapitre 2 · Récurrence",
+   "tr": "spe",
+   "k": "td",
+   "tags": [
+    "recurrence",
+    "suites"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "td2-spe-recurrence",
+   "cor": "inclus",
+   "why": "TD d’entraînement du chapitre, corrigé inclus.",
+   "date": null
+  },
+  {
+   "id": "td1-expertes-complexes",
+   "t": "TD 1 Expertes",
+   "i": "Chapitre 1 · Nombres complexes",
+   "tr": "exp",
+   "k": "td",
+   "tags": [
+    "cx-alg"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "td1-expertes-complexes",
+   "cor": "inclus",
+   "why": "TD d’entraînement du chapitre, corrigé inclus.",
+   "date": null
+  },
+  {
+   "id": "td2-expertes-complexes-trigo",
+   "t": "TD 2 Expertes",
+   "i": "Chapitre 2 · Complexes et trigonométrie",
+   "tr": "exp",
+   "k": "td",
+   "tags": [
+    "cx-trigo",
+    "cx-alg"
+   ],
+   "lv": 2,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "M. Hattab",
+   "pdf": "td2-expertes-complexes-trigo",
+   "cor": "inclus",
+   "why": "TD d’entraînement du chapitre, corrigé inclus.",
+   "date": null
+  },
+  {
+   "id": "archive-9-devoirs-2014-2015",
+   "t": "Archive 9 devoirs 2014-2015",
+   "i": "Ph. Depresle · Tle S (ancien programme)",
+   "tr": "spe",
+   "k": "arch",
+   "tags": [
+    "suites",
+    "limites",
+    "derivation",
+    "continuite",
+    "cx-alg"
+   ],
+   "lv": 3,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "Ph. Depresle",
+   "pdf": "archive-9-devoirs-2014-2015",
+   "cor": null,
+   "why": "Recueil de 9 devoirs de l’ancien programme. Devoir n°5 corrigé ci-dessus. Attention : certaines notions ne sont plus au programme (probabilités continues, etc.).",
+   "date": null
+  },
+  {
+   "id": "archive-10-devoirs-2015-2016",
+   "t": "Archive 10 devoirs 2015-2016",
+   "i": "Ph. Depresle · Tle S (ancien programme)",
+   "tr": "spe",
+   "k": "arch",
+   "tags": [
+    "suites",
+    "limites",
+    "derivation",
+    "continuite",
+    "cx-alg"
+   ],
+   "lv": 3,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "Ph. Depresle",
+   "pdf": "archive-10-devoirs-2015-2016",
+   "cor": null,
+   "why": "Recueil de 10 devoirs de l’ancien programme, corrections à la demande.",
+   "date": null
+  },
+  {
+   "id": "archive-10-devoirs-2017-2018",
+   "t": "Archive 10 devoirs 2017-2018",
+   "i": "Ph. Depresle · Tle S (ancien programme)",
+   "tr": "spe",
+   "k": "arch",
+   "tags": [
+    "suites",
+    "limites",
+    "derivation",
+    "continuite",
+    "cx-alg"
+   ],
+   "lv": 3,
+   "st": 0,
+   "min": null,
+   "calc": null,
+   "src": "Ph. Depresle",
+   "pdf": "archive-10-devoirs-2017-2018",
+   "cor": null,
+   "why": "Recueil de 10 devoirs de l’ancien programme. Devoir n°1 corrigé ci-dessus.",
+   "date": null
+  }
+ ],
+ "cours": [
+  {
+   "id": "spe1",
+   "m": "spe",
+   "n": 1,
+   "t": "Suites numériques",
+   "cours": "cours-spe-ch1-suites",
+   "tags": [
+    "suites"
+   ]
+  },
+  {
+   "id": "spe2",
+   "m": "spe",
+   "n": 2,
+   "t": "Récurrence",
+   "cours": "cours-spe-ch2-recurrence",
+   "tags": [
+    "recurrence"
+   ]
+  },
+  {
+   "id": "spe3",
+   "m": "spe",
+   "n": 3,
+   "t": "Limites de fonctions",
+   "cours": "cours-spe-ch3-limites-fonctions",
+   "fiche": "fiche-spe-ch3-limites",
+   "tags": [
+    "limites"
+   ]
+  },
+  {
+   "id": "spe4",
+   "m": "spe",
+   "n": 4,
+   "t": "Continuité",
+   "cours": "cours-spe-ch4-continuite",
+   "fiche": "fiche-spe-ch4-continuite",
+   "tags": [
+    "continuite"
+   ]
+  },
+  {
+   "id": "spe5",
+   "m": "spe",
+   "n": 5,
+   "t": "Dérivation",
+   "cours": "cours-spe-ch5-derivation",
+   "fiche": "fiche-spe-ch5-derivation",
+   "tags": [
+    "derivation",
+    "convexite"
+   ]
+  },
+  {
+   "id": "exp1",
+   "m": "exp",
+   "n": 1,
+   "t": "Nombres complexes",
+   "cours": "cours-exp-ch1-complexes",
+   "tags": [
+    "cx-alg"
+   ]
+  },
+  {
+   "id": "exp2",
+   "m": "exp",
+   "n": 2,
+   "t": "Nombres complexes et trigonométrie",
+   "cours": "cours-exp-ch2-complexes-trigo",
+   "tags": [
+    "cx-trigo",
+    "cx-geo"
+   ]
+  },
+  {
+   "id": "exp3",
+   "m": "exp",
+   "n": 3,
+   "t": "Équations polynomiales",
+   "cours": "cours-exp-ch3-polynomiales",
+   "tags": [
+    "binome-poly"
+   ]
+  },
+  {
+   "id": "exp4",
+   "m": "exp",
+   "n": 4,
+   "t": "Arithmétique",
+   "cours": "arithmetique-divisibilite",
+   "fiche": "pack-fiche-lacunes-squelettes",
+   "tags": [
+    "arith"
+   ]
+  }
+ ],
+ "niches": [
+  {
+   "t": "Méthode de Horner",
+   "ch": "Exp Ch. 3",
+   "pdf": "niche-horner"
+  },
+  {
+   "t": "Montrer que f est paire",
+   "ch": "Spé · Fonctions",
+   "pdf": "niche-fonction-paire"
+  },
+  {
+   "t": "Montrer que f est périodique",
+   "ch": "Spé · Fonctions",
+   "pdf": "niche-fonction-periodique"
+  },
+  {
+   "t": "Dichotomie & méthode de Newton (Python)",
+   "ch": "Spé Ch. 4",
+   "pdf": "niche-dichotomie-newton"
+  }
+ ],
+ "tags": [
+  {
+   "m": "spe",
+   "id": "suites",
+   "t": "Suites"
+  },
+  {
+   "m": "spe",
+   "id": "recurrence",
+   "t": "Récurrence"
+  },
+  {
+   "m": "spe",
+   "id": "limites",
+   "t": "Limites"
+  },
+  {
+   "m": "spe",
+   "id": "continuite",
+   "t": "Continuité & TVI"
+  },
+  {
+   "m": "spe",
+   "id": "derivation",
+   "t": "Dérivation"
+  },
+  {
+   "m": "spe",
+   "id": "convexite",
+   "t": "Convexité"
+  },
+  {
+   "m": "spe",
+   "id": "exp",
+   "t": "Exponentielle"
+  },
+  {
+   "m": "spe",
+   "id": "ln",
+   "t": "Logarithme"
+  },
+  {
+   "m": "spe",
+   "id": "fonctions",
+   "t": "Étude de fonctions"
+  },
+  {
+   "m": "spe",
+   "id": "logique",
+   "t": "Logique"
+  },
+  {
+   "m": "spe",
+   "id": "proba",
+   "t": "Probabilités"
+  },
+  {
+   "m": "spe",
+   "id": "denombrement",
+   "t": "Dénombrement"
+  },
+  {
+   "m": "spe",
+   "id": "espace",
+   "t": "Géométrie dans l’espace"
+  },
+  {
+   "m": "exp",
+   "id": "cx-alg",
+   "t": "Complexes · algèbre"
+  },
+  {
+   "m": "exp",
+   "id": "cx-trigo",
+   "t": "Complexes · module & argument"
+  },
+  {
+   "m": "exp",
+   "id": "cx-geo",
+   "t": "Complexes · géométrie"
+  },
+  {
+   "m": "exp",
+   "id": "binome-poly",
+   "t": "Binôme & polynômes"
+  },
+  {
+   "m": "exp",
+   "id": "arith",
+   "t": "Arithmétique"
+  }
+ ],
+ "lac": [
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Somme paire ⟺ même parité ; vérifier l'autre inconnue",
+   "type": "méthode",
+   "lines": [
+    "Idée : pair+pair=pair, impair+impair=pair, pair+impair=impair. Piège : dans $(y-2x)(y+2x)=20$, la somme des facteurs vaut $2y$ (paire) → les deux facteurs ont même parité, ça élimine des couples avant de résoudre. Toujours vérifier ensuite que l'autre inconnue est bien entière."
+   ],
+   "meta": "Détectée séance préc. · Revue 12/10 · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Diviseurs d'un nombre premier — pas de critère d'arrêt",
+   "type": "méthode",
+   "lines": [
+    "Idée : si $p$ est premier, $D(p)=\\{-p;-1;1;p\\}$ directement, pas besoin du critère d'arrêt ($\\sqrt N$), réservé aux grands nombres non premiers."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "$\\in$ et accolades, jamais « nombre = ensemble »",
+   "type": "rédaction",
+   "lines": [
+    "Piège : faux d'écrire « $4n-1=D(19)$ » ; juste « $4n-1\\in D(19)$ ». Un nombre appartient à un ensemble, il n'est jamais égal à un ensemble."
+   ],
+   "meta": "Détectée séance préc. · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Pas de « par convention » — toujours justifier par $b=ak$",
+   "type": "méthode",
+   "lines": [
+    "Idée : « $2n+5$ divise $2n+5$ » n'est pas une convention, c'est $2n+5=1\\times(2n+5)$ avec $1\\in\\mathbb{Z}$. Toujours le même raisonnement : $b\\mid a$ car $a=bk$, $k\\in\\mathbb{Z}$."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Synthèse en tableau, justifiée par $B=A\\times k$",
+   "type": "rédaction",
+   "lines": [
+    "Idée : après l'analyse (liste de candidats), toujours vérifier chacun dans un tableau synthèse : colonne $n$, $A(n)$, $B(n)$, et « $B=A\\times k$ avec $k=\\cdots\\in\\mathbb{Z}$ ? ». Toujours le faire même si ça semble marcher."
+   ],
+   "meta": "Détectée séance préc. · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Disjonction de cas : on découpe $n$, pas l'expression",
+   "type": "méthode",
+   "lines": [
+    "Idée : pour un reste par $d$, on écrit $n=dq+r$, $r\\in\\{0,\\ldots,d-1\\}$, on remplace et développe dans l'expression, jamais l'inverse. Piège : écrire « $n^2-1=3q+r$ » ne fait que reformuler la question — la réponse doit être un ensemble de $n$. Si $d$ se factorise directement dans tous les termes, pas besoin de disjonction."
+   ],
+   "meta": "Détectée séance préc. · Revue 12/10 · Réussites 1/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Division euclidienne : reste en fonction de $n$, traiter les petits $n$",
+   "type": "méthode",
+   "lines": [
+    "Idée : écrire $A=B\\times q+R$ avec les termes en $n$, la condition $0\\le R<B$ équivaut à $n\\ge$ seuil ; pour les petits $n$ en dessous du seuil, calcul direct au cas par cas dans un tableau. Piège : $0\\le r<b$ toujours, ex. $17=3\\times4+5$ est interdit, la bonne écriture est $17=3\\times5+2$."
+   ],
+   "meta": "Détectée séance préc. · Revue 12/10 · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Lire la question (existence/unicité, $\\mathbb{N}$ ou $\\mathbb{Z}$)",
+   "type": "rédaction",
+   "lines": [
+    "Idée : souligner le mot-clé avant d'écrire — existence ou unicité ? récurrence imposée ? $n\\in\\mathbb{N}$ ou $\\mathbb{Z}$ ? Existence : $q=E(a/b)$. Unicité : $b(q-q')=r'-r$ puis encadrement $-1<q-q'<1\\Rightarrow q=q'$."
+   ],
+   "meta": "Détectée séance préc. · Revue 12/10 · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Récurrence : quelle puissance isoler",
+   "type": "méthode",
+   "lines": [
+    "Idée : avec deux puissances (ex. $2^{2n+1}+3^{2n+1}$), isoler l'une ou l'autre donne le même résultat — seul le signe du facteur change. Toujours écrire $u_{n+1}$ avec les puissances de rang $n$ avant de remplacer."
+   ],
+   "meta": "Détectée séance préc. · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Sens de « $a\\mid b$ » — $b=ka$, « il existe $k$ »",
+   "type": "méthode",
+   "lines": [
+    "Idée : $a\\mid b$ signifie $b=k\\times a$, $k\\in\\mathbb{Z}$ — toujours « il existe $k$ », jamais « il existe $n$ ». Piège : pour « $2n-1\\mid7$ », erreur commise : $2n=7k-1$ (c'est $7\\mid2n+1$) ; juste $2n-1\\in D(7)=\\{-7;-1;1;7\\}$, d'où $n\\in\\{-3;0;1;4\\}$."
+   ],
+   "meta": "Détectée 12/10 · Réussites 1/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Divisibilité et division euclidienne (anciennes lacunes)",
+   "titre": "Aller au bout des calculs — l'idée ne suffit pas",
+   "type": "rédaction",
+   "lines": [
+    "Piège : « on découpe $n$ en $3q,3q+1,3q+2$ » ne suffit pas, il faut développer chaque cas jusqu'au bout. Piège de calcul : $(5q+4)^2=25q^2+40q+16$, pas $25q^2+16$ (ne pas oublier le double produit)."
+   ],
+   "meta": "Détectée 12/10 · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Écriture d'un entier en base 10",
+   "type": "méthode",
+   "lines": [
+    "Idée : $N=\\overline{a_n\\ldots a_0}=\\sum_{i=0}^n a_i\\times10^i$, $a_i\\in\\{0,\\ldots,9\\}$. $15=1\\times10+5\\times1$ ; $113=1\\times100+1\\times10+3\\times1$ ; $1623=1\\times1000+6\\times100+2\\times10+3\\times1$.",
+    "Piège : point de départ de tous les critères de divisibilité (par 3, 4, 9, 19...)."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Chiffre des unités d'un grand nombre",
+   "type": "méthode",
+   "lines": [
+    "Idée : chiffre des unités de $N$ = reste de $N$ modulo 10."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Stratégie de calcul de $a^N\\bmod n$ (grandes puissances, méthode de la période)",
+   "type": "méthode",
+   "lines": [
+    "Idée : les restes de $a,a^2,a^3,\\ldots$ modulo $n$ tournent en rond. Théorème (4 étapes, cours Hattab) : 1) réduire $a$ mod $n$ ; 2) calculer les puissances jusqu'à $a^T\\equiv c\\,[n]$ (période $T$, souvent $c=1$ ou $-1$) ; 3) diviser l'exposant $N=Tq+r$, $0\\le r<T$ ; 4) conclure $a^N\\equiv c^q\\cdot a^r\\,[n]$.",
+    "Exemple travaillé et réussi : $7^{2026}\\bmod10$ — période $T=4$ ($7^4\\equiv1[10]$), $2026=4\\times506+2$, donc $7^{2026}\\equiv7^2\\equiv9\\,[10]$.",
+    "Piège : $T$ ne divise pas forcément $n$ ou $n-1$ au programme — il faut la trouver à la main."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Rédaction d'un « vrai ou faux » en arithmétique",
+   "type": "rédaction",
+   "lines": [
+    "Idée : vrai → démonstration algébrique générale. Faux → un contre-exemple numérique unique, vérifié par un calcul explicite."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Tableau de congruences pour montrer une divisibilité",
+   "type": "méthode",
+   "lines": [
+    "Idée : une colonne par reste possible de $n$ modulo $d$, une ligne par facteur de l'expression, une ligne pour le produit/l'expression entière.",
+    "Piège : il faut une phrase d'introduction (« tout $n$ est congru à ... modulo $d$ ») et une conclusion après le tableau — le tableau seul n'est pas une preuve rédigée."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Règle des années bissextiles",
+   "type": "par cœur",
+   "lines": [
+    "Idée : divisible par 4, sauf séculaire (÷100) qui n'est bissextile que si ÷400. Ex : 2024 bissextile ; 2000 bissextile ; 1900 non bissextile."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Lien congruence ↔ division euclidienne",
+   "type": "confirmé",
+   "lines": [
+    "Idée : $a\\equiv r\\,[n]$ avec $0\\le r<n$ $\\iff$ $r$ est le reste de la division euclidienne de $a$ par $n$. Ne vaut que si $0\\le r<n$."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "Résoudre $ax\\equiv b\\,[n]$ — méthode de l'inverse",
+   "type": "méthode",
+   "lines": [
+    "Idée : jamais diviser dans une congruence. Si $a$ est inversible mod $n$ ($\\exists a'$, $aa'\\equiv1[n]$), multiplier les deux membres par $a'$. Justification de $9x\\equiv x\\,[4]$ : compatibilité avec la multiplication ($a\\equiv b[n]\\Rightarrow ac\\equiv bc[n]$), ici $9\\equiv1[4]$.",
+    "Exemple réussi : $3x\\equiv2[4]$, inverse de 3 mod 4 est 3 ($3\\times3\\equiv1[4]$), $x\\equiv3\\times2=6\\equiv2[4]$, $S=\\{4k+2\\}$.",
+    "Piège : simplifier un facteur commun n'est licite que s'il est inversible mod $n$ (premier avec $n$)."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (nouvelles lacunes, 01/11)",
+   "titre": "$x^2\\equiv c\\,[n]$ — lecture du tableau des carrés",
+   "type": "méthode",
+   "lines": [
+    "Idée : calculer $x^2$ pour chaque reste de $x$ modulo $n$, lire les colonnes où $x^2\\equiv c$.",
+    "Exemple réussi : $x^2\\equiv0[4]$ → $x\\equiv0$ ou $2\\,[4]$, c'est-à-dire $x$ pair, $S=\\{2k\\}$."
+   ],
+   "meta": ""
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (lacunes du 02/11, correction du nouveau TD)",
+   "titre": "Comparer un nombre et son opposé mod $n$ (ex. $47$ et $-47\\,[7]$)",
+   "type": "méthode",
+   "lines": [
+    "Idée : on ne doit jamais déduire le reste de $-a$ en changeant juste le signe du reste de $a$ — il faut refaire la division euclidienne de $-a$ séparément (ou poser $-a\\equiv n-r\\,[n]$ quand $r\\neq0$).",
+    "Piège observé : $47\\equiv5[7]$ (division de $47$), mais $-47\\equiv2[7]$ (division de $-47$, pas « $-5$ »), car le reste reste dans $\\{0,\\ldots,n-1\\}$. Donc $47\\not\\equiv-47\\,[7]$ (faux)."
+   ],
+   "meta": "Détectée 02/11 · Réussites 0/3 · En cours"
+  },
+  {
+   "m": "exp",
+   "n": 4,
+   "sub": "Congruences (lacunes du 02/11, correction du nouveau TD)",
+   "titre": "Tableau des puissances successives mod $n$ : écrire chaque exposant explicitement",
+   "type": "calcul",
+   "lines": [
+    "Idée : pour trouver la période $T$ d'une grande puissance, écrire une vraie ligne $k=1,2,3,\\ldots$ avec $a^k\\bmod n$ à chaque étape, sans calcul « de tête » qui saute l'étiquette de l'exposant.",
+    "Piège observé : pour $3^k\\bmod7$, reste $2$ trouvé et attribué à $k=6$ au lieu de $k=2$ (c'est $3^2\\equiv2[7]$, alors que $3^6\\equiv1[7]$) — l'exposant avait glissé, pas le calcul lui-même."
+   ],
+   "meta": "Détectée 02/11 · Réussites 0/3 · En cours"
+  }
+ ],
+ "version": "2026-11-22"
+}
