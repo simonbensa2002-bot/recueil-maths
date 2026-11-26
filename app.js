@@ -36,12 +36,31 @@ const idbGet = k => idbOp('readonly', s => s.get(k)).catch(() => null);
 const idbPut = (k, v) => idbOp('readwrite', s => s.put(v, k));
 const idbKeys = () => idbOp('readonly', s => s.getAllKeys()).catch(() => []);
 const idbClear = () => idbOp('readwrite', s => s.clear());
+const idbDel = k => idbOp('readwrite', s => s.delete(k));
+
+/* ---------- documents ajoutés par moi (métadonnées dans IndexedDB + copie localStorage) ---------- */
+let CUSTOM = { docs: [], cours: [] };
+const saveCustom = async () => {
+  const j = JSON.stringify(CUSTOM);
+  try { localStorage.setItem('recueil-custom', j); } catch (e) { }
+  try { await idbPut('_custom', j); } catch (e) { }
+};
+async function loadCustom() {
+  let j = null;
+  try { j = await idbGet('_custom'); } catch (e) { }
+  if (!j) { try { j = localStorage.getItem('recueil-custom'); } catch (e) { } }
+  try { const c = JSON.parse(j || '{}'); CUSTOM = { docs: c.docs || [], cours: c.cours || [] }; } catch (e) { }
+}
+function mergeCustom() {
+  DATA.docs = DATA.docs.filter(d => !d.u).concat(CUSTOM.docs);
+  DATA.cours = DATA.cours.filter(c => !c.u).concat(CUSTOM.cours);
+}
 
 let DATA = null, HAVE = new Set();
 const allSlugs = () => {
   const s = new Set();
-  DATA.docs.forEach(d => { s.add(d.pdf); if (d.cor && d.cor !== 'inclus') s.add(d.cor); });
-  DATA.cours.forEach(c => { s.add(c.cours); if (c.fiche) s.add(c.fiche); });
+  DATA.docs.filter(d => !d.u).forEach(d => { s.add(d.pdf); if (d.cor && d.cor !== 'inclus') s.add(d.cor); });
+  DATA.cours.filter(c => !c.u).forEach(c => { s.add(c.cours); if (c.fiche) s.add(c.fiche); });
   DATA.niches.forEach(n => s.add(n.pdf));
   return [...s];
 };
@@ -96,6 +115,7 @@ function card(d, sc) {
   <div class="acts">
     <button class="btn pri sm" data-act="open" data-s="${d.pdf}" data-c="${hasCor ? d.cor : ''}" data-ttl="${esc(ttl)}">Sujet</button>
     ${hasCor ? `<button class="btn sm" data-act="open" data-s="${d.cor}" data-ttl="${esc('Corrigé · ' + ttl)}">Corrigé</button>` : d.cor === 'inclus' ? '<span class="badge">Corrigé inclus</span>' : '<span class="badge mute">Pas de corrigé</span>'}
+    ${d.u ? `<button class="btn sm" data-act="delu" data-id="${d.id}">Supprimer</button>` : ''}
   </div>
   <details class="more" data-id="${d.id}" ${OPEN.has(d.id) ? 'open' : ''}><summary>Pourquoi ce niveau · mon ressenti</summary>
     <p class="why">${esc(d.why)}</p>
@@ -150,6 +170,7 @@ function viewBiblio() {
   const L = S.lib;
   const seg = (key, opts) => `<div class="chips" style="margin-bottom:8px">${opts.map(([v, l]) => `<button class="chip" data-act="lib" data-key="${key}" data-v="${v}" aria-pressed="${L[key] === v}">${l}</button>`).join('')}</div>`;
   V.innerHTML = `<h1>Tous les DS</h1><p class="lead">${DATA.docs.length} documents. Cherche par chapitre, titre ou source.</p>
+  <div class="acts" style="margin:-6px 0 14px"><button class="btn pri sm" data-act="add">＋ Ajouter un PDF</button></div>
   <section class="glass panel"><input type="search" id="q" placeholder="suites, convexité, complexes, Hattab…" value="${esc(L.q)}" aria-label="Rechercher" style="margin-bottom:12px">
   ${seg('tr', [['all', 'Tout'], ['spe', 'Spé'], ['exp', 'Expertes']])}
   ${seg('k', [['all', 'Tout'], ['ds', 'DS'], ['bb', 'Bacs blancs'], ['ic', 'Interros'], ['td', 'TD'], ['arch', 'Archives']])}</section><div id="res"></div>`;
@@ -169,15 +190,17 @@ function viewCours() {
   const leg = cnt.map((k, i) => `<span><i style="background:var(${SCOL[i]})"></i>${STATUS[i]} : ${k}</span>`).join('');
   const one = c => {
     const s = chState(c.id), nl = DATA.lac.filter(l => l.m === c.m && l.n === c.n).length;
-    return `<article class="ch glass"><div class="row"><div class="grow"><p class="ct"><small>${c.m === 'spe' ? 'Spé' : 'Exp'} Ch. ${c.n}</small>${esc(c.t)}</p>${nl ? `<span class="sub">${nl} lacune${nl > 1 ? 's' : ''} en cours</span>` : ''}</div>
+    return `<article class="ch glass"><div class="row"><div class="grow"><p class="ct"><small>${c.m === 'spe' ? 'Spé' : 'Exp'}${c.u ? ' · ajouté' : ' Ch. ' + c.n}</small>${esc(c.t)}</p>${nl ? `<span class="sub">${nl} lacune${nl > 1 ? 's' : ''} en cours</span>` : ''}</div>
     <button class="btn pri sm" data-act="open" data-s="${c.cours}" data-ttl="${esc('Cours · ' + c.t)}">Cours</button>
-    ${c.fiche ? `<button class="btn sm" data-act="open" data-s="${c.fiche}" data-ttl="${esc('Fiche · ' + c.t)}">Fiche</button>` : ''}</div>
+    ${c.fiche ? `<button class="btn sm" data-act="open" data-s="${c.fiche}" data-ttl="${esc('Fiche · ' + c.t)}">Fiche</button>` : ''}
+    ${c.u ? `<button class="btn sm" data-act="delc" data-id="${c.id}">Supprimer</button>` : ''}</div>
     <div class="row" style="margin-top:10px"><span class="dot" style="background:var(${SCOL[s.st]})"></span>
     <select data-act="status" data-id="${c.id}" aria-label="Où j'en suis : ${esc(c.t)}">${STATUS.map((x, i) => `<option value="${i}" ${i === s.st ? 'selected' : ''}>${x}</option>`).join('')}</select>
     <label class="switch"><input type="checkbox" data-act="rev" data-id="${c.id}" ${s.rev ? 'checked' : ''}>À réviser</label></div></article>`;
   };
   const nrev = DATA.cours.filter(c => chState(c.id).rev).length;
   V.innerHTML = `<h1>Cours</h1><p class="lead">Les chapitres de M. Hattab, Spé et Expertes. Note où tu en es et coche ceux du prochain contrôle.</p>
+  <div class="acts" style="margin:-6px 0 14px"><button class="btn pri sm" data-act="add" data-k="cours">＋ Ajouter un cours</button></div>
   <section class="glass panel"><div class="prog">${bar}</div><div class="legend">${leg}</div>
   ${nrev ? `<div class="acts"><button class="btn pri sm" data-act="fromrev">Trouver des DS pour mes ${nrev} chapitre${nrev > 1 ? 's' : ''} à réviser</button></div>` : '<p class="sub" style="margin:10px 0 0">Coche « À réviser » sur les chapitres d’un contrôle pour trouver les DS adaptés.</p>'}</section>
   <h3>Spécialité</h3>${DATA.cours.filter(c => c.m === 'spe').map(one).join('')}
@@ -192,6 +215,9 @@ function viewPlus() {
   };
   const nich = DATA.niches.map(n => `<article class="ch glass"><div class="row"><div class="grow"><p class="ct">★ ${esc(n.t)} <small style="margin:0">· ${esc(n.ch)}</small></p></div><button class="btn sm" data-act="open" data-s="${n.pdf}" data-ttl="${esc(n.t)}">PDF</button></div></article>`).join('');
   V.innerHTML = `<h1>Plus</h1>
+  <h2>Ajouter</h2>
+  <section class="glass panel"><p class="sub" style="margin-top:0">Un nouveau DS, un nouveau cours, une fiche : ajoute-le ici, en 20 secondes, directement depuis ton téléphone ou ton PC. Il apparaît tout de suite dans le conseiller et la bibliothèque, sans rien reprogrammer.</p>
+  <div class="acts"><button class="btn pri" data-act="add">＋ Ajouter un PDF</button></div></section>
   <h2 id="hl">Hors-ligne</h2>
   <section class="glass panel"><p class="label">Mes PDF dans le téléphone <small>${have} / ${slugs.length}</small></p>
   <div class="bar"><i style="width:${Math.round(have / slugs.length * 100)}%"></i></div>
@@ -238,7 +264,10 @@ document.addEventListener('click', e => {
   else if (a === 'feel') { const x = S.done[t.dataset.id] = S.done[t.dataset.id] || {}; const v = +t.dataset.v; x.dl = x.dl === v ? null : v; if (x.dl == null && x.n == null && x.m == null) delete S.done[t.dataset.id]; x.dt = x.dt || new Date().toISOString().slice(0, 10); save(); OPEN.add(t.dataset.id); rerenderRes(); }
   else if (a === 'undo') { delete S.done[t.dataset.id]; save(); OPEN.add(t.dataset.id); rerenderRes(); }
   else if (a === 'lib') { S.lib[t.dataset.key] = t.dataset.v; save(); updBiblio(); }
-  else if (a === 'wipe') { if (confirm('Supprimer les PDF importés de l’appli ?')) idbClear().then(() => { HAVE.clear(); refresh(); }); }
+  else if (a === 'add') openAdd(t.dataset.k);
+  else if (a === 'delu') { if (confirm('Supprimer ce document de l’appli ?')) removeCustom('docs', t.dataset.id); }
+  else if (a === 'delc') { if (confirm('Supprimer ce cours de l’appli ?')) removeCustom('cours', t.dataset.id); }
+  else if (a === 'wipe') { if (confirm('Supprimer les PDF importés de l’appli ? (tes documents ajoutés restent)')) idbKeys().then(ks => Promise.all(ks.filter(k => !String(k).startsWith('u-') && k !== '_custom').map(idbDel))).then(() => idbKeys()).then(ks => { HAVE = new Set(ks); refresh(); }); }
   else if (a === 'reset') { if (confirm('Effacer tous tes statuts, notes et ressentis ?')) { S = JSON.parse(JSON.stringify(DEF)); save(); refresh(); } }
 });
 document.addEventListener('change', e => {
@@ -274,6 +303,67 @@ async function importFiles(files) {
   try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) { }
   refresh();
   const m2 = $('#impmsg'); if (m2) m2.textContent = `${ok} PDF importé${ok > 1 ? 's' : ''}.` + (skip.length ? ` ${skip.length} fichier${skip.length > 1 ? 's' : ''} non reconnu${skip.length > 1 ? 's' : ''} (noms attendus : ceux du dossier recueil-pdf).` : '');
+}
+
+
+/* ---------- ajouter un PDF soi-même ---------- */
+const UKIND = [['ds', 'DS'], ['bb', 'Bac blanc'], ['ic', 'Interro'], ['td', 'TD'], ['exo', 'Exercices'], ['cours', 'Cours / fiche']];
+const readBuf = f => f.arrayBuffer();
+const slugOfName = n => String(n).replace(/\.pdf$/i, '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+function openAdd(kind) {
+  const old = $('#sheet'); if (old) old.remove();
+  const el = document.createElement('div'); el.id = 'sheet'; el.className = 'sheet';
+  const st = { k: kind === 'cours' ? 'cours' : 'ds', tr: 'spe', tags: new Set(), lv: 3, calc: '' };
+  const draw = () => {
+    const tg = DATA.tags.filter(t => t.m === st.tr || !t.m);
+    el.innerHTML = `<div class="sheet-in glass"><div class="sheet-h"><h2 style="margin:0">Ajouter un PDF</h2><button class="btn sm" data-sa="x" aria-label="Fermer">✕</button></div>
+    <label class="btn pri" style="cursor:pointer;width:100%;justify-content:center">${st.f ? '✓ ' + esc(st.f.name) : '1. Choisir le PDF'}<input type="file" id="sf" accept="application/pdf,.pdf" hidden></label>
+    <input type="text" id="st" class="txt" placeholder="Titre (ex. DS n°5 du 12 décembre)" value="${esc(st.t || '')}" style="margin-top:10px">
+    <p class="label" style="margin-top:14px">Type</p><div class="chips">${UKIND.map(([v, l]) => `<button class="chip" data-sa="k" data-v="${v}" aria-pressed="${st.k === v}">${l}</button>`).join('')}</div>
+    <p class="label" style="margin-top:14px">Matière</p><div class="chips"><button class="chip" data-sa="tr" data-v="spe" aria-pressed="${st.tr === 'spe'}">Spé</button><button class="chip" data-sa="tr" data-v="exp" aria-pressed="${st.tr === 'exp'}">Expertes</button></div>
+    <p class="label" style="margin-top:14px">Notions</p><div class="chips">${tg.map(t => `<button class="chip" data-sa="tag" data-v="${t.id}" aria-pressed="${st.tags.has(t.id)}">${esc(t.t)}</button>`).join('')}</div>
+    ${st.k === 'cours' ? '' : `<p class="label" style="margin-top:14px">Niveau <small>${LV[st.lv]}</small></p><div class="chips">${[1, 2, 3, 4, 5].map(n => `<button class="chip" data-sa="lv" data-v="${n}" aria-pressed="${st.lv === n}">${n} · ${LV[n]}</button>`).join('')}</div>
+    <div class="fields" style="margin-top:12px"><input type="number" inputmode="numeric" id="smin" min="0" placeholder="Durée (min)" value="${esc(st.min || '')}" style="width:130px">
+    <select id="scalc"><option value="">Calculatrice : ?</option><option value="y" ${st.calc === 'y' ? 'selected' : ''}>Avec calculatrice</option><option value="n" ${st.calc === 'n' ? 'selected' : ''}>Sans calculatrice</option></select></div>
+    <label class="btn sm" style="cursor:pointer;margin-top:12px">${st.c ? '✓ Corrigé : ' + esc(st.c.name) : '＋ Corrigé (facultatif)'}<input type="file" id="sc" accept="application/pdf,.pdf" hidden></label>`}
+    <div class="acts" style="margin-top:16px"><button class="btn pri" data-sa="ok" ${st.f ? '' : 'disabled'} style="flex:1;justify-content:center">Ajouter à mon recueil</button></div>
+    <p class="sub" id="smsg" style="margin:8px 0 0;min-height:1.2em"></p></div>`;
+  };
+  const keep = () => { const t = $('#st', el), m = $('#smin', el), c = $('#scalc', el); if (t) st.t = t.value; if (m) st.min = m.value; if (c) st.calc = c.value; };
+  el.addEventListener('click', async e => {
+    const b = e.target.closest('[data-sa]'); if (!b) { if (e.target === el) el.remove(); return; }
+    const x = b.dataset.sa; keep();
+    if (x === 'x') return el.remove();
+    if (x === 'k') st.k = b.dataset.v; else if (x === 'tr') { st.tr = b.dataset.v; st.tags.clear(); }
+    else if (x === 'tag') { const v = b.dataset.v; st.tags.has(v) ? st.tags.delete(v) : st.tags.add(v); }
+    else if (x === 'lv') st.lv = +b.dataset.v;
+    else if (x === 'ok') { b.disabled = true; $('#smsg', el).textContent = 'Ajout…'; try { await commitAdd(st); el.remove(); refresh(); return; } catch (err) { b.disabled = false; $('#smsg', el).textContent = 'Impossible d’ajouter ce PDF (' + (err && err.message || 'erreur') + ').'; return; } }
+    const y = $('.sheet-in', el).scrollTop; draw(); $('.sheet-in', el).scrollTop = y;
+  });
+  el.addEventListener('change', e => {
+    keep();
+    if (e.target.id === 'sf' && e.target.files[0]) { st.f = e.target.files[0]; if (!st.t) st.t = slugOfName(st.f.name); }
+    else if (e.target.id === 'sc' && e.target.files[0]) st.c = e.target.files[0];
+    else return;
+    const y = $('.sheet-in', el).scrollTop; draw(); $('.sheet-in', el).scrollTop = y;
+  });
+  draw(); document.body.appendChild(el);
+}
+async function commitAdd(st) {
+  const id = 'u' + Date.now().toString(36), title = (st.t || '').trim() || slugOfName(st.f.name), pdf = 'u-' + id;
+  await idbPut(pdf, await readBuf(st.f)); HAVE.add(pdf);
+  let cor = null;
+  if (st.c) { cor = pdf + 'c'; await idbPut(cor, await readBuf(st.c)); HAVE.add(cor); }
+  const tags = [...st.tags];
+  if (st.k === 'cours') CUSTOM.cours.push({ id, u: 1, m: st.tr, n: '', t: title, cours: pdf, fiche: null, tags });
+  else CUSTOM.docs.push({ id, u: 1, t: title, i: 'Ajouté par moi', tr: st.tr, k: st.k, tags, lv: st.lv, st: 0, min: +st.min || 0, calc: st.calc === 'y' ? true : st.calc === 'n' ? false : null, src: 'Perso', pdf, cor, why: 'Niveau choisi par toi à l’ajout. Après l’avoir fait, note ton ressenti : le niveau s’ajuste.', date: new Date().toISOString().slice(0, 10) });
+  await saveCustom(); mergeCustom();
+  try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) { }
+}
+async function removeCustom(type, id) {
+  const it = CUSTOM[type].find(x => x.id === id); if (!it) return;
+  for (const k of [it.pdf, it.cor, it.cours, it.fiche]) if (k && String(k).startsWith('u-')) { try { await idbDel(k); } catch (e) { } HAVE.delete(k); }
+  CUSTOM[type] = CUSTOM[type].filter(x => x.id !== id); await saveCustom(); mergeCustom(); refresh();
 }
 
 /* ---------- lecteur PDF ---------- */
@@ -341,7 +431,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#viewer
 (async function init() {
   try { DATA = await (await fetch('data/docs.json')).json(); }
   catch (e) { V.innerHTML = '<p class="empty">Impossible de charger les données. Ouvre l’appli une première fois avec du réseau.</p>'; return; }
-  HAVE = new Set(await idbKeys());
+  HAVE = new Set(await idbKeys()); await loadCustom(); mergeCustom();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => { });
   window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (VIEWS[h] && h !== cur) go(h); });
   go(VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : 'conseiller');

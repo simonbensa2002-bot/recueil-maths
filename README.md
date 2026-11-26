@@ -13,3 +13,6 @@ Pour servir les PDF depuis l'appli à la place, les déposer dans `pdf/` (retire
 ## Mettre à jour
 Ajouter un DS : ajouter une entrée dans `data/docs.json` et son PDF, puis déployer.
 Changer le numéro de `SHELL` dans `sw.js` quand les fichiers de l'appli changent.
+
+## Ajouter un document
+Dans l'appli : bouton « ＋ Ajouter un PDF » (onglets Tous les DS, Cours, Plus). Les PDF ajoutés restent dans l'appareil (pas sur GitHub) et ne se synchronisent pas entre appareils.

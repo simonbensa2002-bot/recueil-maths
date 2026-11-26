@@ -135,3 +135,11 @@ mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .vmsg{color:var(--muted);padding:40px 20px;text-align:center;max-width:420px}
 .empty{color:var(--muted);padding:18px 4px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* feuille « Ajouter un PDF » */
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(4,5,14,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:flex-end;justify-content:center}
+.sheet-in{width:100%;max-width:640px;max-height:92vh;overflow-y:auto;padding:18px 16px calc(20px + env(safe-area-inset-bottom));border-radius:26px 26px 0 0;background:linear-gradient(160deg,rgba(40,36,100,.95),rgba(14,14,44,.96))!important}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.txt{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:rgba(255,255,255,.08);border:1px solid var(--g-line);border-radius:14px;padding:10px 12px}
+.btn[disabled]{opacity:.45;pointer-events:none}
+@media(min-width:700px){.sheet{align-items:center}.sheet-in{border-radius:26px}}
